@@ -1,0 +1,25 @@
+{
+  "name": "random-indexing",
+  "description": "Create an index and index doc with random content into it.",
+  "default": true,
+  "schedule": [
+    {
+      "name": "delete-index",
+      "operation": "delete-index"
+    },
+    {
+      "name": "create-index",
+      "operation": "create-index"
+    },
+    {
+      "name": "check-cluster-health",
+      "operation": "check-cluster-health"
+    },
+    {
+      "name": "documents-indexing",
+      "operation": "document-bulk-indexing",
+      "clients": 10,
+      "iterations": 50
+    }
+  ]
+}
